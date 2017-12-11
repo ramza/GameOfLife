@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/game_of_life.gd" type="Script" id=1]
+[ext_resource path="res://Other/Retro60Prime.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 16
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+
+[node name="GameOfLife" type="Node2D"]
+
+script = ExtResource( 1 )
+width = 10
+height = 10
+cell_size = 32
+spawn_rate = 50
+
+[node name="StepTimer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.2
+one_shot = false
+autostart = true
+
+[node name="StartPosition" type="Position2D" parent="."]
+
+position = Vector2( 300, 100 )
+
+[node name="ResetButton" type="Button" parent="."]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 297.0
+margin_top = 58.0
+margin_right = 345.0
+margin_bottom = 78.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "RESET"
+flat = false
+
+[node name="Title" type="Label" parent="."]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 297.0
+margin_top = 23.0
+margin_right = 893.0
+margin_bottom = 49.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "CONWAY'S GAME OF LIFE"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
